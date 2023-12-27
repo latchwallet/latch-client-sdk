@@ -1,4 +1,4 @@
-# `@biconomy/node-client`
+# `@latch-wallet/node-client`
 
 # Biconomy SDK Node Client
 
@@ -6,17 +6,17 @@ Node Client is the api client package that communicate with [Biconomy SDK](https
 
 ## Installation
 
-`yarn add @biconomy/node-client`
+`yarn add @latch-wallet/node-client`
 
 OR
 
-`npm install @biconomy/node-client `
+`npm install @latch-wallet/node-client `
 
 ## Usage
 
 ```
 // import package
-import NodeClient from '@biconomy/node-client'
+import NodeClient from '@latch-wallet/node-client'
 
 // initialisation
 
@@ -50,9 +50,9 @@ console.log('trxDetail ', trxDetail)
 # Get Smart Contract Wallet Balances
 
 ```
-import { BalancesDto } from '@biconomy/node-client'
+import { BalancesDto } from '@latch-wallet/node-client'
 
-import { ChainId } from '@biconomy/core-types'
+import { ChainId } from '@latch-wallet/core-types'
 
 const address = '0xabc......'
 

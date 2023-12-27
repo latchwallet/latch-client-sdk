@@ -2,13 +2,13 @@ import { JsonRpcProvider, Provider } from "@ethersproject/providers";
 import { BigNumber, BigNumberish, BytesLike, ethers, Bytes } from "ethers";
 import { IBaseSmartAccount } from "./interfaces/IBaseSmartAccount";
 import { defaultAbiCoder, keccak256 } from "ethers/lib/utils";
-import { UserOperation, ChainId } from "@biconomy/core-types";
+import { UserOperation, ChainId } from "@latch-wallet/core-types";
 import { calcPreVerificationGas, DefaultGasLimits } from "./utils/Preverificaiton";
-import { NotPromise, packUserOp, Logger, RPC_PROVIDER_URLS } from "@biconomy/common";
-import { IBundler, UserOpResponse } from "@biconomy/bundler";
-import { IPaymaster, PaymasterAndDataResponse } from "@biconomy/paymaster";
-import { SendUserOpParams } from "@biconomy/modules";
-import { SponsorUserOperationDto, BiconomyPaymaster, PaymasterMode, IHybridPaymaster } from "@biconomy/paymaster";
+import { NotPromise, packUserOp, Logger, RPC_PROVIDER_URLS } from "@latch-wallet/common";
+import { IBundler, UserOpResponse } from "@latch-wallet/bundler";
+import { IPaymaster, PaymasterAndDataResponse } from "@latch-wallet/paymaster";
+import { SendUserOpParams } from "@latch-wallet/modules";
+import { SponsorUserOperationDto, BiconomyPaymaster, PaymasterMode, IHybridPaymaster } from "@latch-wallet/paymaster";
 import { BaseSmartAccountConfig, EstimateUserOpGasParams, TransactionDetailsForUserOp } from "./utils/Types";
 import { GasOverheads } from "./utils/Preverificaiton";
 import { EntryPoint, EntryPoint__factory } from "@account-abstraction/contracts";
@@ -281,8 +281,8 @@ export abstract class BaseSmartAccount implements IBaseSmartAccount {
       }
     } else {
       if (!this.bundler) throw new Error("Bundler is not provided");
-      delete userOp.maxFeePerGas;
-      delete userOp.maxPriorityFeePerGas;
+      // delete userOp.maxFeePerGas;
+      // delete userOp.maxPriorityFeePerGas;
       // Making call to bundler to get gas estimations for userOp
       const { callGasLimit, verificationGasLimit, preVerificationGas, maxFeePerGas, maxPriorityFeePerGas } =
         await this.bundler.estimateUserOpGas(userOp);

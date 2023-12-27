@@ -1,4 +1,4 @@
-# `@biconomy/common`
+# `@latch-wallet/common`
 
 common utils
 

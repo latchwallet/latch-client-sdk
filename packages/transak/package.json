@@ -1,6 +1,6 @@
 {
-  "name": "@biconomy/transak",
-  "version": "3.1.1",
+  "name": "@latch-wallet/transak",
+  "version": "0.0.1",
   "description": "transak for biconomy sdk",
   "main": "./dist/src/index.js",
   "typings": "./dist/src/index.d.ts",
@@ -11,7 +11,7 @@
     "cross-chain",
     "transak"
   ],
-  "author": "livingrockrises <chirag@biconomy.io>",
+  "author": "livingrockrises <chirag@latch.io>",
   "homepage": "https://github.com/bcnmy/biconomy-client-sdk#readme",
   "license": "MIT",
   "files": [

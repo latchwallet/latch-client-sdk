@@ -1,4 +1,4 @@
-import { UserOperation } from "@biconomy/core-types";
+import { UserOperation } from "@latch-wallet/core-types";
 import { BigNumber } from "ethers";
 
 export const transformUserOP = (userOp: UserOperation): UserOperation => {

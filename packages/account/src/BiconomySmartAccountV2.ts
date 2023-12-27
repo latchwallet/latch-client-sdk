@@ -11,7 +11,7 @@ import {
   SmartAccountFactory_v200__factory,
   AddressResolver,
   AddressResolver__factory,
-} from "@biconomy/common";
+} from "@latch-wallet/common";
 import {
   BiconomyTokenPaymasterRequest,
   BiconomySmartAccountV2Config,
@@ -22,11 +22,11 @@ import {
   SmartAccountInfo,
   QueryParamsForAddressResolver,
 } from "./utils/Types";
-import { BaseValidationModule, ModuleInfo, SendUserOpParams } from "@biconomy/modules";
-import { UserOperation, Transaction } from "@biconomy/core-types";
-import NodeClient from "@biconomy/node-client";
-import INodeClient from "@biconomy/node-client";
-import { IHybridPaymaster, BiconomyPaymaster, SponsorUserOperationDto } from "@biconomy/paymaster";
+import { BaseValidationModule, ModuleInfo, SendUserOpParams } from "@latch-wallet/modules";
+import { UserOperation, Transaction } from "@latch-wallet/core-types";
+import NodeClient from "@latch-wallet/node-client";
+import INodeClient from "@latch-wallet/node-client";
+import { IHybridPaymaster, BiconomyPaymaster, SponsorUserOperationDto } from "@latch-wallet/paymaster";
 import {
   SupportedChainsResponse,
   BalancesResponse,
@@ -35,8 +35,8 @@ import {
   SmartAccountByOwnerDto,
   SmartAccountsResponse,
   SCWTransactionResponse,
-} from "@biconomy/node-client";
-import { UserOpResponse } from "@biconomy/bundler";
+} from "@latch-wallet/node-client";
+import { UserOpResponse } from "@latch-wallet/bundler";
 import {
   ADDRESS_RESOLVER_ADDRESS,
   BICONOMY_IMPLEMENTATION_ADDRESSES_BY_VERSION,

@@ -1,4 +1,4 @@
-import { UserOperation } from "@biconomy/core-types";
+import { UserOperation } from "@latch-wallet/core-types";
 import { BigNumberish, Bytes, BytesLike, BigNumber } from "ethers";
 /**
  * Interface for Smart Contract Wallet aka Smart Account.

@@ -6,7 +6,7 @@ import { ERC20SessionKeyData, SessionValidationModuleConfig } from "../utils/Typ
  * Session validation module for ERC20 token transfers.
  * It encodes session data into a sessionKeyData bytes to be verified by ERC20SessionValidationModule on chain.
  *
- * @author Sachin Tomar <sachin.tomar@biconomy.io>
+ * @author Sachin Tomar <sachin.tomar@latch.io>
  */
 export class ERC20SessionValidationModule implements ISessionValidationModule<ERC20SessionKeyData> {
   moduleAddress!: string;

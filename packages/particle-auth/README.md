@@ -1,12 +1,12 @@
-# `@biconomy/particle-auth`
+# `@latch-wallet/particle-auth`
 
 > A library to import the particle-auth for web directly from [Biconomy SDK](https://github.com/bcnmy/biconomy-client-sdk)
 
 ## Usage
 
 ```ts
-import { ParticleNetwork, WalletEntryPosition } from "@biconomy/particle-auth";
-import { ParticleProvider } from "@biconomy/particle-auth";
+import { ParticleNetwork, WalletEntryPosition } from "@latch-wallet/particle-auth";
+import { ParticleProvider } from "@latch-wallet/particle-auth";
 import Web3 from "web3";
 
 const particle = new ParticleNetwork({

@@ -2,15 +2,15 @@ import { JsonRpcProvider } from "@ethersproject/providers";
 import { BigNumber, Signer, BytesLike } from "ethers";
 import { ISmartAccount } from "./interfaces/ISmartAccount";
 import { defaultAbiCoder, keccak256, arrayify } from "ethers/lib/utils";
-import { UserOperation, ChainId } from "@biconomy/core-types";
+import { UserOperation, ChainId } from "@latch-wallet/core-types";
 import { calcPreVerificationGas, DefaultGasLimits } from "./utils/Preverificaiton";
-import { packUserOp } from "@biconomy/common";
+import { packUserOp } from "@latch-wallet/common";
 
-import { IBundler, UserOpResponse } from "@biconomy/bundler";
-import { IPaymaster, PaymasterAndDataResponse } from "@biconomy/paymaster";
-import { Logger } from "@biconomy/common";
+import { IBundler, UserOpResponse } from "@latch-wallet/bundler";
+import { IPaymaster, PaymasterAndDataResponse } from "@latch-wallet/paymaster";
+import { Logger } from "@latch-wallet/common";
 import { IEntryPoint } from "@account-abstraction/contracts";
-import { SponsorUserOperationDto, BiconomyPaymaster, IHybridPaymaster, PaymasterMode } from "@biconomy/paymaster";
+import { SponsorUserOperationDto, BiconomyPaymaster, IHybridPaymaster, PaymasterMode } from "@latch-wallet/paymaster";
 import { SmartAccountConfig, SendUserOpDto, EstimateUserOpGasParams } from "./utils/Types";
 import { DefaultGasLimit } from "./utils/Constants";
 

@@ -1,6 +1,6 @@
 {
-  "name": "@biconomy/paymaster",
-  "version": "3.1.1",
+  "name": "@latch-wallet/paymaster",
+  "version": "0.0.1",
   "description": "Biconomy Paymaster to interact with Paymaster Services that interacts with ( veriying and token ) paymasters",
   "main": "./dist/src/index.js",
   "typings": "./dist/src/index.d.ts",
@@ -23,7 +23,7 @@
     "test:concurrently": "concurrently -k --success first 'yarn start:ganache > /dev/null'",
     "start:ganache": "ganache -m 'direct buyer cliff train rice spirit census refuse glare expire innocent quote'"
   },
-  "author": "talhamalik883 <talha.malik@biconomy.io>",
+  "author": "talhamalik883 <talha.malik@latch.io>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bcnmy/biconomy-client-sdk.git"
@@ -37,8 +37,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@biconomy/common": "^3.1.1",
-    "@biconomy/core-types": "^3.1.1",
+    "@latch-wallet/common": "^0.0.1",
+    "@latch-wallet/core-types": "^0.0.1",
     "@ethersproject/abstract-provider": "^5.7.0",
     "@ethersproject/properties": "^5.7.0",
     "ethers": "^5.7.0"

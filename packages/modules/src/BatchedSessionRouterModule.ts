@@ -1,5 +1,5 @@
 import { Signer, ethers } from "ethers";
-import { Logger } from "@biconomy/common";
+import { Logger } from "@latch-wallet/common";
 import { hexConcat, arrayify, hexZeroPad, defaultAbiCoder, Bytes } from "ethers/lib/utils";
 import { ModuleVersion, CreateSessionDataParams, BatchedSessionRouterModuleConfig, ModuleInfo, CreateSessionDataResponse } from "./utils/Types";
 import {

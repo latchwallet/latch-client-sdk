@@ -10,13 +10,13 @@ import {
   getEntryPointContract,
   getSAFactoryContract,
   getSAProxyContract,
-} from "@biconomy/common";
+} from "@latch-wallet/common";
 import { BiconomySmartAccountConfig, Overrides, BiconomyTokenPaymasterRequest, InitilizationData } from "./utils/Types";
-import { UserOperation, Transaction, SmartAccountType } from "@biconomy/core-types";
-import NodeClient from "@biconomy/node-client";
-import INodeClient from "@biconomy/node-client";
-import { IHybridPaymaster, BiconomyPaymaster, SponsorUserOperationDto } from "@biconomy/paymaster";
-import { DEFAULT_ECDSA_OWNERSHIP_MODULE, ECDSAOwnershipValidationModule } from "@biconomy/modules";
+import { UserOperation, Transaction, SmartAccountType } from "@latch-wallet/core-types";
+import NodeClient from "@latch-wallet/node-client";
+import INodeClient from "@latch-wallet/node-client";
+import { IHybridPaymaster, BiconomyPaymaster, SponsorUserOperationDto } from "@latch-wallet/paymaster";
+import { DEFAULT_ECDSA_OWNERSHIP_MODULE, ECDSAOwnershipValidationModule } from "@latch-wallet/modules";
 import { IBiconomySmartAccount } from "./interfaces/IBiconomySmartAccount";
 import {
   ISmartAccount,
@@ -27,7 +27,7 @@ import {
   SmartAccountByOwnerDto,
   SmartAccountsResponse,
   SCWTransactionResponse,
-} from "@biconomy/node-client";
+} from "@latch-wallet/node-client";
 import {
   ENTRYPOINT_ADDRESSES,
   BICONOMY_FACTORY_ADDRESSES,

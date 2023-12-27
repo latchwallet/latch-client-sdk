@@ -1,6 +1,6 @@
-import { UserOperation } from "@biconomy/core-types";
+import { UserOperation } from "@latch-wallet/core-types";
 import { FeeQuotesOrDataResponse, BiconomyTokenPaymasterRequest, FeeQuotesOrDataDto, PaymasterAndDataResponse } from "../utils/Types";
-import { Transaction } from "@biconomy/core-types";
+import { Transaction } from "@latch-wallet/core-types";
 import { Provider } from "@ethersproject/abstract-provider";
 import { IPaymaster } from "./IPaymaster";
 

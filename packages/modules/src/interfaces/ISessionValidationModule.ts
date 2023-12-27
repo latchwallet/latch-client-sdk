@@ -6,7 +6,7 @@
  *
  * @remarks sessionData is of generic type T which is specific to the module
  *
- * @author Sachin Tomar <sachin.tomar@biconomy.io>
+ * @author Sachin Tomar <sachin.tomar@latch.io>
  */
 export interface ISessionValidationModule<T> {
   getSessionKeyData(_sessionData: T): Promise<string>;

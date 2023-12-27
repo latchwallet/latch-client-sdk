@@ -1,11 +1,11 @@
 import { Signer } from "ethers";
 import { BigNumberish, BigNumber } from "ethers";
-import { IBundler } from "@biconomy/bundler";
-import { IPaymaster, PaymasterFeeQuote, SponsorUserOperationDto } from "@biconomy/paymaster";
-import { BaseValidationModule, ModuleInfo } from "@biconomy/modules";
+import { IBundler } from "@latch-wallet/bundler";
+import { IPaymaster, PaymasterFeeQuote, SponsorUserOperationDto } from "@latch-wallet/paymaster";
+import { BaseValidationModule, ModuleInfo } from "@latch-wallet/modules";
 import { Provider } from "@ethersproject/providers";
 import { GasOverheads } from "./Preverificaiton";
-import { UserOperation, ChainId } from "@biconomy/core-types";
+import { UserOperation, ChainId } from "@latch-wallet/core-types";
 
 export type EntryPointAddresses = {
   [address: string]: string;

@@ -1,7 +1,7 @@
 import { Wallet, ethers } from "ethers";
 import { SampleRecipient, SampleRecipient__factory } from "@account-abstraction/utils/dist/src/types";
 import { BiconomySmartAccount } from "../src/BiconomySmartAccount";
-import { ChainId, UserOperation } from "@biconomy/core-types";
+import { ChainId, UserOperation } from "@latch-wallet/core-types";
 import { calcPreVerificationGas } from "../src/utils/Preverificaiton";
 
 describe("calcPreVerificationGas", () => {

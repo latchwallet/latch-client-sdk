@@ -1,5 +1,5 @@
-import { UserOperation } from "@biconomy/core-types";
-import { NotPromise, packUserOp } from "@biconomy/common"; // '@account-abstraction/utils'
+import { UserOperation } from "@latch-wallet/core-types";
+import { NotPromise, packUserOp } from "@latch-wallet/common"; // '@account-abstraction/utils'
 import { arrayify, hexlify } from "ethers/lib/utils";
 import { BigNumber } from "ethers";
 export interface GasOverheads {

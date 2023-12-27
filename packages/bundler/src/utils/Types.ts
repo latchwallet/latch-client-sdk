@@ -1,5 +1,5 @@
 import { ethers, BigNumber } from "ethers";
-import { ChainId, UserOperation } from "@biconomy/core-types";
+import { ChainId, UserOperation } from "@latch-wallet/core-types";
 
 export type Bundlerconfig = {
   bundlerUrl: string;

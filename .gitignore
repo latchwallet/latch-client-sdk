@@ -75,3 +75,6 @@ yarn.lock
 typechain
 
 openapi/
+
+# idea
+.idea

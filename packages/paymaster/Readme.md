@@ -7,7 +7,7 @@ ERC4337, Account abstraction, introduces the concept of Paymasters. These specia
 Using `npm` package manager
 
 ```bash
-npm i @biconomy/paymaster
+npm i @latch-wallet/paymaster
 ```
 
 OR
@@ -15,14 +15,14 @@ OR
 Using `yarn` package manager
 
 ```bash
-yarn add @biconomy/paymaster
+yarn add @latch-wallet/paymaster
 ```
 
 **Usage**
 
 ```typescript
 // This is how you create paymaster instance in your dapp's
-import { IPaymaster, BiconomyPaymaster } from "@biconomy/paymaster";
+import { IPaymaster, BiconomyPaymaster } from "@latch-wallet/paymaster";
 
 // Currently this package only exports Biconomy Paymaster which acts as a Hybrid paymaster for gas abstraction. You can sponsor user transactions but can also make users pay gas in supported ERC20 tokens.
 

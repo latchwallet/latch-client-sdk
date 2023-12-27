@@ -1,11 +1,11 @@
 {
-  "name": "@biconomy/common",
-  "version": "3.1.1",
+  "name": "@latch-wallet/common",
+  "version": "0.0.1",
   "description": "common utils to be used for aa transactions",
   "keywords": [
     "utils"
   ],
-  "author": "livingrockrises <chirag@biconomy.io>",
+  "author": "livingrockrises <chirag@latch-wallet.io>",
   "homepage": "https://github.com/bcnmy/biconomy-client-sdk#readme",
   "license": "MIT",
   "main": "dist/src/index.js",
@@ -41,8 +41,8 @@
   },
   "dependencies": {
     "@account-abstraction/contracts": "^0.6.0",
-    "@biconomy/core-types": "^3.1.1",
-    "@biconomy/node-client": "^3.1.1",
+    "@latch-wallet/core-types": "^0.0.1",
+    "@latch-wallet/node-client": "^0.0.1",
     "@ethersproject/abi": "^5.7.0",
     "@ethersproject/bytes": "^5.7.0",
     "@ethersproject/providers": "^5.7.0",
@@ -57,6 +57,7 @@
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^1.0.2",
     "@nomiclabs/hardhat-ethers": "^2.0.0",
+    "@types/node-fetch": "^2.6.2",
     "hardhat": "^2.11.0"
   }
 }

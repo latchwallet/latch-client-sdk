@@ -1,6 +1,6 @@
 {
-  "name": "@biconomy/modules",
-  "version": "3.1.1",
+  "name": "@latch-wallet/modules",
+  "version": "0.0.1",
   "description": "This package provides different validation modules/plugins for ERC4337 compatible modular account",
   "main": "./dist/src/index.js",
   "typings": "./dist/src/index.d.ts",
@@ -24,7 +24,7 @@
     "format": "prettier --write \"{src,tests}/**/*.ts\"",
     "lint": "tslint -p tsconfig.json"
   },
-  "author": "livingrockrises <chirag@biconomy.io>",
+  "author": "livingrockrises <chirag@latch.io>",
   "license": "MIT",
   "files": [
     "dist/*",
@@ -34,9 +34,9 @@
     "access": "public"
   },
   "dependencies": {
-    "@biconomy/common": "^3.1.1",
-    "@biconomy/core-types": "^3.1.1",
-    "@biconomy/node-client": "^3.1.1",
+    "@latch-wallet/common": "^0.0.1",
+    "@latch-wallet/core-types": "^0.0.1",
+    "@latch-wallet/node-client": "^0.0.1",
     "ethereumjs-util": "^7.1.5",
     "ethers": "^5.7.2",
     "merkletreejs": "^0.3.9"

@@ -9,15 +9,15 @@ import {
   SmartAccountFactory_v200__factory,
   ECDSAOwnershipRegistryModule_v100__factory,
   MultiChainValidationModule_v100__factory,
-} from "@biconomy/common";
+} from "@latch-wallet/common";
 
 import { BiconomySmartAccountV2 } from "../src/BiconomySmartAccountV2";
-import { ChainId, UserOperation } from "@biconomy/core-types";
-import { DEFAULT_ECDSA_OWNERSHIP_MODULE, ECDSAOwnershipValidationModule } from "@biconomy/modules";
-import { MultiChainValidationModule } from "@biconomy/modules";
-import { BaseValidationModule } from "@biconomy/modules";
-import { ECDSAOwnershipRegistryModule_v100 } from "@biconomy/common";
-import { MultiChainValidationModule_v100 } from "@biconomy/common";
+import { ChainId, UserOperation } from "@latch-wallet/core-types";
+import { DEFAULT_ECDSA_OWNERSHIP_MODULE, ECDSAOwnershipValidationModule } from "@latch-wallet/modules";
+import { MultiChainValidationModule } from "@latch-wallet/modules";
+import { BaseValidationModule } from "@latch-wallet/modules";
+import { ECDSAOwnershipRegistryModule_v100 } from "@latch-wallet/common";
+import { MultiChainValidationModule_v100 } from "@latch-wallet/common";
 
 const provider = new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545");
 const signer = provider.getSigner();
