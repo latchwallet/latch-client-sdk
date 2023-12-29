@@ -1,4 +1,4 @@
-import { Signer } from "ethers";
+import { providers, Signer } from "ethers";
 import { BigNumberish, BigNumber } from "ethers";
 import { IBundler } from "@latch-wallet/bundler";
 import { IPaymaster, PaymasterFeeQuote, SponsorUserOperationDto } from "@latch-wallet/paymaster";
@@ -55,7 +55,7 @@ export type BiconomyTokenPaymasterRequest = {
 };
 
 export type BiconomySmartAccountConfig = {
-  signer: Signer;
+  signer: providers.JsonRpcSigner;
   rpcUrl?: string;
   chainId: ChainId;
   entryPointAddress?: string;

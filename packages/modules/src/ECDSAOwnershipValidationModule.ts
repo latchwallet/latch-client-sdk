@@ -1,13 +1,14 @@
 import { Logger } from "@latch-wallet/common";
-import { Signer, ethers } from "ethers";
+import { Signer, ethers, providers } from "ethers";
 import { Bytes, arrayify } from "ethers/lib/utils";
+import { TypedDataDomain, TypedDataField } from "@ethersproject/abstract-signer";
 import { ECDSAOwnershipValidationModuleConfig, ModuleVersion } from "./utils/Types";
 import { DEFAULT_ECDSA_OWNERSHIP_MODULE, ECDSA_OWNERSHIP_MODULE_ADDRESSES_BY_VERSION } from "./utils/Constants";
 import { BaseValidationModule } from "./BaseValidationModule";
 
 // Could be renamed with suffix API
 export class ECDSAOwnershipValidationModule extends BaseValidationModule {
-  signer!: Signer;
+  signer!: providers.JsonRpcSigner;
 
   moduleAddress!: string;
 
@@ -69,6 +70,18 @@ export class ECDSAOwnershipValidationModule extends BaseValidationModule {
 
   async signMessage(message: Bytes | string): Promise<string> {
     let signature = await this.signer.signMessage(message);
+
+    const potentiallyIncorrectV = parseInt(signature.slice(-2), 16);
+    if (![27, 28].includes(potentiallyIncorrectV)) {
+      const correctV = potentiallyIncorrectV + 27;
+      signature = signature.slice(0, -2) + correctV.toString(16);
+    }
+
+    return signature;
+  }
+
+  async signTypedData(domain: TypedDataDomain, types: Record<string, Array<TypedDataField>>, value: Record<string, any>): Promise<string> {
+    let signature = await this.signer._signTypedData(domain, types, value);
 
     const potentiallyIncorrectV = parseInt(signature.slice(-2), 16);
     if (![27, 28].includes(potentiallyIncorrectV)) {

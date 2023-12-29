@@ -1,5 +1,5 @@
 import { JsonRpcProvider } from "@ethersproject/providers";
-import { ethers, BigNumberish, BytesLike, BigNumber } from "ethers";
+import { ethers, BigNumberish, BytesLike, BigNumber, TypedDataDomain, TypedDataField } from "ethers";
 import { BaseSmartAccount } from "./BaseSmartAccount";
 import { Bytes, getCreate2Address, hexConcat, keccak256, solidityKeccak256 } from "ethers/lib/utils";
 import {
@@ -612,6 +612,30 @@ export class BiconomySmartAccountV2 extends BaseSmartAccount {
     }
     // const dataHash = ethers.utils.arrayify(ethers.utils.id(message));
     let signature = await this.activeValidationModule.signMessage(dataHash);
+
+    if (signature.slice(0, 2) !== "0x") {
+      signature = "0x" + signature;
+    }
+    signature = ethers.utils.defaultAbiCoder.encode(["bytes", "address"], [signature, this.activeValidationModule.getAddress()]);
+
+    // If the account is undeployed, use ERC-6492
+    if (!(await this.isAccountDeployed(await this.getAccountAddress()))) {
+      const coder = new ethers.utils.AbiCoder();
+      const populatedTransaction = await this.factory?.populateTransaction.deployCounterFactualAccount(
+        await this.defaultValidationModule.getAddress(),
+        await this.defaultValidationModule.getInitData(),
+        this.index,
+      );
+      signature =
+        coder.encode(["address", "bytes", "bytes"], [this.factoryAddress, populatedTransaction?.data, signature]) +
+        "6492649264926492649264926492649264926492649264926492649264926492"; // magic suffix
+    }
+    return signature;
+  }
+  async signTypedData(domain: TypedDataDomain, types: Record<string, Array<TypedDataField>>, value: Record<string, any>): Promise<string> {
+    this.isActiveValidationModuleDefined();
+
+    let signature = await this.activeValidationModule.signTypedData(domain, types, value);
 
     if (signature.slice(0, 2) !== "0x") {
       signature = "0x" + signature;

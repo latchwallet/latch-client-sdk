@@ -90,6 +90,9 @@ importers:
       '@biconomy-devx/account-contracts-v2':
         specifier: npm:@biconomy-devx/account-contracts-v2@^1.0.0
         version: 1.0.1
+      '@ethersproject/abstract-signer':
+        specifier: 5.7.0
+        version: 5.7.0
       '@ethersproject/logger':
         specifier: ^5.7.0
         version: 5.7.0
@@ -243,6 +246,9 @@ importers:
 
   packages/modules:
     dependencies:
+      '@ethersproject/abstract-signer':
+        specifier: 5.7.0
+        version: 5.7.0
       '@latch-wallet/common':
         specifier: ^0.0.1
         version: link:../common

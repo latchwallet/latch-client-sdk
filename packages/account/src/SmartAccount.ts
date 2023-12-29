@@ -1,5 +1,5 @@
 import { JsonRpcProvider } from "@ethersproject/providers";
-import { BigNumber, Signer, BytesLike } from "ethers";
+import { BigNumber, Signer, BytesLike, providers } from "ethers";
 import { ISmartAccount } from "./interfaces/ISmartAccount";
 import { defaultAbiCoder, keccak256, arrayify } from "ethers/lib/utils";
 import { UserOperation, ChainId } from "@latch-wallet/core-types";
@@ -35,7 +35,7 @@ export abstract class SmartAccount implements ISmartAccount {
 
   chainId!: ChainId;
 
-  signer!: Signer;
+  signer!: providers.JsonRpcSigner;
 
   smartAccountConfig: SmartAccountConfig;
 

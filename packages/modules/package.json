@@ -34,6 +34,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@ethersproject/abstract-signer": "5.7.0",
     "@latch-wallet/common": "^0.0.1",
     "@latch-wallet/core-types": "^0.0.1",
     "@latch-wallet/node-client": "^0.0.1",

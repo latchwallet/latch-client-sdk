@@ -1,4 +1,4 @@
-import { Signer } from "ethers";
+import { Signer, TypedDataDomain, TypedDataField } from "ethers";
 import { Bytes } from "ethers/lib/utils";
 import { BaseValidationModuleConfig, ModuleInfo } from "./utils/Types";
 import { DEFAULT_ENTRYPOINT_ADDRESS } from "./utils/Constants";
@@ -30,4 +30,8 @@ export abstract class BaseValidationModule implements IValidationModule {
   abstract signUserOpHash(_userOpHash: string, _params?: ModuleInfo): Promise<string>;
 
   abstract signMessage(_message: Bytes | string): Promise<string>;
+
+  async signTypedData(_domain: TypedDataDomain, _types: Record<string, Array<TypedDataField>>, _value: Record<string, any>): Promise<string> {
+    throw new Error("signTypedData not implemented.");
+  }
 }

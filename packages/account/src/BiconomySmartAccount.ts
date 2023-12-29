@@ -1,5 +1,5 @@
 import { JsonRpcProvider } from "@ethersproject/providers";
-import { ethers, BigNumberish, BytesLike, BigNumber } from "ethers";
+import { ethers, BigNumberish, BytesLike, BigNumber, providers } from "ethers";
 import { SmartAccount } from "./SmartAccount";
 import {
   Logger,
@@ -108,7 +108,7 @@ export class BiconomySmartAccount extends SmartAccount implements IBiconomySmart
     return this;
   }
 
-  async attachSigner(_signer: Signer): Promise<void> {
+  async attachSigner(_signer: providers.JsonRpcSigner): Promise<void> {
     try {
       this.signer = _signer;
       this.owner = await this.signer.getAddress();

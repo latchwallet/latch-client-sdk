@@ -1,5 +1,5 @@
 import { ChainId, UserOperation } from "@latch-wallet/core-types";
-import { Signer } from "ethers";
+import { Signer, providers } from "ethers";
 import { SessionKeyManagerModule } from "../SessionKeyManagerModule";
 import { ISessionStorage } from "interfaces/ISessionStorage";
 
@@ -12,7 +12,7 @@ export interface BaseValidationModuleConfig {
 export interface ECDSAOwnershipValidationModuleConfig extends BaseValidationModuleConfig {
   moduleAddress?: string;
   version?: ModuleVersion;
-  signer: Signer;
+  signer: providers.JsonRpcSigner;
 }
 
 export interface SessionKeyManagerModuleConfig extends BaseValidationModuleConfig {
