@@ -109,7 +109,7 @@ importers:
         specifier: ^0.0.1
         version: link:../core-types
       '@latch-wallet/modules':
-        specifier: ^0.0.1
+        specifier: ^0.0.2
         version: link:../modules
       '@latch-wallet/node-client':
         specifier: ^0.0.1

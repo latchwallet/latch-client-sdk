@@ -43,7 +43,7 @@
     "@latch-wallet/bundler": "^0.0.1",
     "@latch-wallet/common": "^0.0.1",
     "@latch-wallet/core-types": "^0.0.1",
-    "@latch-wallet/modules": "^0.0.1",
+    "@latch-wallet/modules": "^0.0.2",
     "@latch-wallet/node-client": "^0.0.1",
     "@latch-wallet/paymaster": "^0.0.1",
     "@ethersproject/logger": "^5.7.0",
