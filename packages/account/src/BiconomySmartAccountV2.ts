@@ -47,6 +47,7 @@ import {
 import log from "loglevel";
 
 type UserOperationKey = keyof UserOperation;
+
 export class BiconomySmartAccountV2 extends BaseSmartAccount {
   private nodeClient!: INodeClient;
 
@@ -603,12 +604,19 @@ export class BiconomySmartAccountV2 extends BaseSmartAccount {
 
   async signMessage(message: Bytes | string): Promise<string> {
     this.isActiveValidationModuleDefined();
-    const dataHash = ethers.utils.arrayify(ethers.utils.hashMessage(message));
+    let dataHash: string;
+    if (ethers.utils.isBytes(message)) {
+      dataHash = ethers.utils.keccak256(message);
+    } else {
+      dataHash = ethers.utils.id(message);
+    }
+    // const dataHash = ethers.utils.arrayify(ethers.utils.id(message));
     let signature = await this.activeValidationModule.signMessage(dataHash);
 
     if (signature.slice(0, 2) !== "0x") {
       signature = "0x" + signature;
     }
+    signature = ethers.utils.defaultAbiCoder.encode(["bytes", "address"], [signature, this.activeValidationModule.getAddress()]);
 
     // If the account is undeployed, use ERC-6492
     if (!(await this.isAccountDeployed(await this.getAccountAddress()))) {
