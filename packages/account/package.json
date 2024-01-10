@@ -1,6 +1,6 @@
 {
   "name": "@latch-wallet/account",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "This package provides apis for ERC-4337 based smart account implementations",
   "main": "./dist/src/index.js",
   "typings": "./dist/src/index.d.ts",
