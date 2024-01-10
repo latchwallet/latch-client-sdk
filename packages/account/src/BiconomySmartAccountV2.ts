@@ -604,14 +604,8 @@ export class BiconomySmartAccountV2 extends BaseSmartAccount {
 
   async signMessage(message: Bytes | string): Promise<string> {
     this.isActiveValidationModuleDefined();
-    let dataHash: string;
-    if (ethers.utils.isBytes(message)) {
-      dataHash = ethers.utils.keccak256(message);
-    } else {
-      dataHash = ethers.utils.id(message);
-    }
-    // const dataHash = ethers.utils.arrayify(ethers.utils.id(message));
-    let signature = await this.activeValidationModule.signMessage(dataHash);
+
+    let signature = await this.activeValidationModule.signMessage(message);
 
     if (signature.slice(0, 2) !== "0x") {
       signature = "0x" + signature;
@@ -632,6 +626,7 @@ export class BiconomySmartAccountV2 extends BaseSmartAccount {
     }
     return signature;
   }
+
   async signTypedData(domain: TypedDataDomain, types: Record<string, Array<TypedDataField>>, value: Record<string, any>): Promise<string> {
     this.isActiveValidationModuleDefined();
 
